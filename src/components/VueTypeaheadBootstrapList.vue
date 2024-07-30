@@ -141,7 +141,7 @@ export default {
         return []
       }
 
-      const re = new RegExp(this.showAllResults ? '' : this.escapedQuery, 'gi')
+      const re = new RegExp(this.showAllResults ? '' : this.escapedQuery.replace(/[^0-9kK]/g, ''), 'gi')
 
       // Filter, sort, and concat
       return this.data
